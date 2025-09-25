@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Classical Ciphers</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Classical Ciphers</h1>
+  <label>Method
+    <select id="method">
+      <option value="caesar">Caesar</option>
+      <option value="affine">Affine</option>
+      <option value="columnar">Hoán vị (Columnar)</option>
+      <option value="vigenere">Vigenère</option>
+      <option value="playfair">Playfair</option>
+    </select>
+  </label>
+  <label>Key <input id="key" placeholder="key or numeric key"></label>
+  <label>Plain / Cipher <textarea id="text" rows="6"></textarea></label>
+  <div class="buttons">
+    <button id="enc">Encrypt</button>
+    <button id="dec">Decrypt</button>
+  </div>
+  <label>Result <textarea id="result" rows="6" readonly></textarea></label>
+  <small>Note: input non-letters ignored; Playfair merges I/J.</small>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
