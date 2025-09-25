@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mã hóa Playfair</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fddb92, #d1fdff);
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      max-width: 650px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    input, textarea, button {
+      width: 90%;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+      background: #f39c12;
+      color: white;
+      border: none;
+    }
+    button:hover { background: #d35400; }
+    h1 { color: #f39c12; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mã hóa Playfair</h1>
+    <textarea id="inputText" rows="4" placeholder="Nhập văn bản..."></textarea><br>
+    <input type="text" id="key" placeholder="Nhập khóa chữ (ví dụ: MONHOC)"><br>
+    <button onclick="encrypt()">Mã hóa</button>
+    <button onclick="decrypt()">Giải mã</button>
+    <h3>Kết quả:</h3>
+    <textarea id="outputText" rows="4" readonly></textarea>
+  </div>
+
+  <script>
+    function generateMatrix(key) {
+      key = key.toUpperCase().replace(/J/g,"I").replace(/[^A-Z]/g,"");
+      let matrix = "", seen = {};
+      for (let c of key) if (!seen[c]) { seen[c]=1; matrix+=c; }
+      for (let c of "ABCDEFGHIKLMNOPQRSTUVWXYZ") if (!seen[c]) matrix+=c;
+      let table = [];
+      for (let i=0;i<25;i+=5) table.push(matrix.substr(i,5));
+      return table;
+    }
+    function findPos(matrix, c) {
+      if(c=="J") c="I";
+      for (let i=0;i<5;i++) {
+        let j=matrix[i].indexOf(c);
+        if (j!=-1) return [i,j];
+      }
+      return null;
+    }
+    function playfairProcess(text, key, encrypting=true) {
+      let matrix = generateMatrix(key);
+      text = text.toUpperCase().replace(/J/g,"I").replace(/[^A-Z]/g,"");
+      if (text.length%2!=0) text+="X";
+      let result="";
+      for(let i=0;i<text.length;i+=2){
+        let a=text[i], b=text[i+1];
+        if(a==b) b="X";
+        let [r1,c1]=findPos(matrix,a);
+        let [r2,c2]=findPos(matrix,b);
+        if(r1==r2){
+          result+=matrix[r1][(c1+(encrypting?1:4))%5];
+          result+=matrix[r2][(c2+(encrypting?1:4))%5];
+        } else if(c1==c2){
+          result+=matrix[(r1+(encrypting?1:4))%5][c1];
+          result+=matrix[(r2+(encrypting?1:4))%5][c2];
+        } else {
+          result+=matrix[r1][c2];
+          result+=matrix[r2][c1];
+        }
+      }
+      return result;
+    }
+    function encrypt() {
+      document.getElementById("outputText").value =
+        playfairProcess(document.getElementById("inputText").value, document.getElementById("key").value, true);
+    }
+    function decrypt() {
+      document.getElementById("outputText").value =
+        playfairProcess(document.getElementById("inputText").value, document.getElementById("key").value, false);
+    }
+  </script>
+</body>
+</html>

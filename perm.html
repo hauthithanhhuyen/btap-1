@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mã hóa Hoán Vị</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    input, textarea, button {
+      width: 90%;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+      background: #ff6f61;
+      color: white;
+      border: none;
+    }
+    button:hover { background: #ff3b2e; }
+    h1 { color: #ff6f61; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mã hóa Hoán Vị</h1>
+    <textarea id="inputText" rows="4" placeholder="Nhập văn bản..."></textarea><br>
+    <input type="text" id="key" placeholder="Nhập khóa hoán vị (ví dụ: 3142)"><br>
+    <button onclick="encrypt()">Mã hóa</button>
+    <button onclick="decrypt()">Giải mã</button>
+    <h3>Kết quả:</h3>
+    <textarea id="outputText" rows="4" readonly></textarea>
+  </div>
+
+  <script>
+    function encrypt() {
+      let text = document.getElementById("inputText").value;
+      let key = document.getElementById("key").value.split("").map(Number);
+      let size = key.length;
+      let result = "";
+
+      for (let i = 0; i < text.length; i += size) {
+        let block = text.substr(i, size).padEnd(size, ' ');
+        let arr = new Array(size);
+        for (let j = 0; j < size; j++) {
+          arr[key[j]-1] = block[j];
+        }
+        result += arr.join("");
+      }
+      document.getElementById("outputText").value = result;
+    }
+
+    function decrypt() {
+      let text = document.getElementById("inputText").value;
+      let key = document.getElementById("key").value.split("").map(Number);
+      let size = key.length;
+      let result = "";
+
+      for (let i = 0; i < text.length; i += size) {
+        let block = text.substr(i, size);
+        let arr = new Array(size);
+        for (let j = 0; j < size; j++) {
+          arr[j] = block[key[j]-1];
+        }
+        result += arr.join("");
+      }
+      document.getElementById("outputText").value = result.trim();
+    }
+  </script>
+</body>
+</html>
