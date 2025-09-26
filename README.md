@@ -60,7 +60,7 @@ string giaiMaAffine(string text, int a, int b) {
         } else res += c;
     }
     return res;
-}</p>
+}
 
 int main() {
     string plain, cipher;
@@ -146,8 +146,7 @@ string caesarDecrypt(const string &text, int key) {
         } else res += c;
     }
     return res;
-}</p>
-
+}
 int main() {
     string plain, cipher;
     int k;
@@ -163,7 +162,6 @@ int main() {
     cout << "\nNhap chuoi da ma hoa de giai ma: ";
     getline(cin, cipher);
     cout << "Chuoi giai ma: " << caesarDecrypt(cipher, k) << endl;
-
     return 0;
 }
 <img width="1514" height="898" alt="{6ED46D9C-DAEF-4E3D-8B65-57FE4D3ECFD0}" src="https://github.com/user-attachments/assets/23066eb1-1a88-46af-bc86-f02943889502" /></p>
@@ -178,7 +176,7 @@ Cách phá: thử các độ dài khóa khả dĩ rồi brute-force hoán vị n
 #### Sử dụng mã hóa
 <img width="863" height="760" alt="{9EE7D392-8430-4684-B1CE-A24577F7AD3C}" src="https://github.com/user-attachments/assets/7b1332e7-80da-4119-9927-07368ad75584" />
 #### Giải mã 
-<img width="891" height="710" alt="{EDD29AA9-E5CB-4C9C-ACB3-BE5942BE2D9B}" src="https://github.com/user-attachments/assets/0c8292c1-69ea-4116-9f51-c79e004d1968" /></p>
+<img width="891" height="710" alt="{EDD29AA9-E5CB-4C9C-ACB3-BE5942BE2D9B}" src="https://github.com/user-attachments/assets/0c8292c1-69ea-4116-9f51-c79e004d1968" />
 #### Đã mã hóa và giải mã qua C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -196,7 +194,7 @@ string encryptPermutation(const string &text, const vector<int> &key) {
         res += encBlock;
     }
     return res;
-}</p>
+}
 string decryptPermutation(const string &text, const vector<int> &key) {
     string res = "";
     int n = key.size();
@@ -211,7 +209,7 @@ string decryptPermutation(const string &text, const vector<int> &key) {
         res += decBlock;
     }
     return res;
-}</p>
+}
 int main() {
     string plain, cipher;
     int n;
@@ -231,7 +229,7 @@ int main() {
     cout << "Chuoi giai ma: " << decryptPermutation(cipher, key) << endl;
 
     return 0;
-}</p>
+}
 <img width="1465" height="707" alt="{FC5CFCDF-00BB-480D-A532-139B3A28F452}" src="https://github.com/user-attachments/assets/a09055f8-5f4b-4510-8e4f-b20bb10ca79a" /></p>
 
 # 4.Mã hóa Vigenère (Vigenère Cipher)Khóa lặp theo chiều dài plaintext
@@ -249,13 +247,12 @@ Cách phá: Kasiski + Friedman để tìm m, rồi tách từng Caesar (frequenc
 
 Trong đó:
 
-- K[i]: ký tự của khóa (lặp lại nếu cần)</p>
-
+- K[i]: ký tự của khóa (lặp lại nếu cần)
 # Kết Quả
 ## Mã Hóa
 <img width="949" height="786" alt="{7F25EA87-6CC2-4E5F-A9CF-8F4CFC3B837A}" src="https://github.com/user-attachments/assets/4082c996-c5b5-4a0e-b8e6-261218054635" />
 ## Giải mã
-<img width="851" height="671" alt="{AF7A5AA5-71F0-4278-98E3-FAE996DF69C5}" src="https://github.com/user-attachments/assets/759921e8-026e-4c8f-b2a9-ceb7454c4e12" /></p>
+<img width="851" height="671" alt="{AF7A5AA5-71F0-4278-98E3-FAE996DF69C5}" src="https://github.com/user-attachments/assets/759921e8-026e-4c8f-b2a9-ceb7454c4e12" />
 
 ## Đã mã hóa và giải mã bằng C++
 #include <bits/stdc++.h>
@@ -273,7 +270,7 @@ string vigenereEncrypt(const string &text, const string &key) {
         } else res += c;
     }
     return res;
-}</p>
+}
 // Giải mã Vigenere
 string vigenereDecrypt(const string &text, const string &key) {
     string res = "";
@@ -287,7 +284,7 @@ string vigenereDecrypt(const string &text, const string &key) {
         } else res += c;
     }
     return res;
-}</p>
+}
 int main() {
     string plain, cipher, key;
     cout << "=== Ma hoa Vigenere ===\n";
@@ -310,7 +307,7 @@ Mã hoá: tạo bảng 5x5 từ khóa (I/J chung). Chia plaintext thành digraph
 Giải mã: quy tắc ngược lại.</p>
 
 Không gian khóa: khoảng 25!/(...) rất lớn (phân bố hoán vị của 25 chữ cái), nhưng không gian thực tế nhỏ hơn do cấu trúc bảng.
-Cách phá: brute-force không khả thi; sử dụng hill-climbing/heuristic, scoring ngôn ngữ, hoặc tấn công dựa trên phân tích digraph.</p>
+Cách phá: brute-force không khả thi; sử dụng hill-climbing/heuristic, scoring ngôn ngữ, hoặc tấn công dựa trên phân tích digraph.
 
 ## Dùng một ma trận 5x5 chứa các chữ cái để mã hóa cặp ký tự (digraph).
 
@@ -373,7 +370,7 @@ void generateMatrix(const string &key) {
             k++;
         }
     }
-}</p>
+}
 
 // In ma trận Playfair (debug)
 void printMatrix() {
@@ -395,7 +392,7 @@ string prepareText(string text) {
         }
     }
     return s;
-}</p>
+}
 
 // Mã hóa cặp ký tự
 string encryptPair(char a, char b) {
@@ -405,7 +402,6 @@ string encryptPair(char a, char b) {
     else if(c1==c2) return string(1,matrix[(r1+1)%5][c1]) + matrix[(r2+1)%5][c2];
     else return string(1,matrix[r1][c2]) + matrix[r2][c1];
 }
-</p>
 // Giải mã cặp ký tự
 string decryptPair(char a, char b) {
     int r1=pos[a].first,c1=pos[a].second;
@@ -414,7 +410,6 @@ string decryptPair(char a, char b) {
     else if(c1==c2) return string(1,matrix[(r1+4)%5][c1]) + matrix[(r2+4)%5][c2];
     else return string(1,matrix[r1][c2]) + matrix[r2][c1];
 }
-
 // Mã hóa Playfair
 string playfairEncrypt(string text, string key) {
     generateMatrix(key);
