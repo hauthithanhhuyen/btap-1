@@ -91,7 +91,7 @@ int main() {
     return 0;
 }
 
-<img width="1153" height="420" alt="{6E9C75D9-AB64-4742-8916-8439E7E9892E}" src="https://github.com/user-attachments/assets/f1f64710-15d7-44d3-aabb-07856ce491f7" />
+<img width="1153" height="420" alt="{6E9C75D9-AB64-4742-8916-8439E7E9892E}" src="https://github.com/user-attachments/assets/f1f64710-15d7-44d3-aabb-07856ce491f7" /></p>
 
 # 2. Mã hóa Caesar (Caesar Cipher)
 
@@ -170,7 +170,7 @@ int main() {
 
     return 0;
 }
-<img width="1514" height="898" alt="{6ED46D9C-DAEF-4E3D-8B65-57FE4D3ECFD0}" src="https://github.com/user-attachments/assets/23066eb1-1a88-46af-bc86-f02943889502" />
+<img width="1514" height="898" alt="{6ED46D9C-DAEF-4E3D-8B65-57FE4D3ECFD0}" src="https://github.com/user-attachments/assets/23066eb1-1a88-46af-bc86-f02943889502" /></p>
 
 # 3. Mã hóa Hoán vị (Columnar transposition (Hoán vị cột)).Hệ thống sẽ dùng thứ tự chữ trong từ để hoán vị cột
 Tên: Columnar transposition (Hoán vị cột)
@@ -236,7 +236,7 @@ int main() {
 
     return 0;
 }
-<img width="1465" height="707" alt="{FC5CFCDF-00BB-480D-A532-139B3A28F452}" src="https://github.com/user-attachments/assets/a09055f8-5f4b-4510-8e4f-b20bb10ca79a" />
+<img width="1465" height="707" alt="{FC5CFCDF-00BB-480D-A532-139B3A28F452}" src="https://github.com/user-attachments/assets/a09055f8-5f4b-4510-8e4f-b20bb10ca79a" /></p>
 
 # 4.Mã hóa Vigenère (Vigenère Cipher)Khóa lặp theo chiều dài plaintext
 ## Cách làm:
@@ -259,7 +259,7 @@ Trong đó:
 ## Mã Hóa
 <img width="949" height="786" alt="{7F25EA87-6CC2-4E5F-A9CF-8F4CFC3B837A}" src="https://github.com/user-attachments/assets/4082c996-c5b5-4a0e-b8e6-261218054635" />
 ## Giải mã
-<img width="851" height="671" alt="{AF7A5AA5-71F0-4278-98E3-FAE996DF69C5}" src="https://github.com/user-attachments/assets/759921e8-026e-4c8f-b2a9-ceb7454c4e12" />
+<img width="851" height="671" alt="{AF7A5AA5-71F0-4278-98E3-FAE996DF69C5}" src="https://github.com/user-attachments/assets/759921e8-026e-4c8f-b2a9-ceb7454c4e12" /></p>
 
 ## Đã mã hóa và giải mã bằng C++
 #include <bits/stdc++.h>
@@ -306,7 +306,7 @@ int main() {
     cout << "Chuoi giai ma: " << vigenereDecrypt(cipher, key) << endl;
     return 0;
 }
-<img width="1425" height="811" alt="{66EA4608-FD27-417F-A67B-7C68A5877D83}" src="https://github.com/user-attachments/assets/d65bc3ba-8236-4062-818d-4cd74cdcb3bd" />
+<img width="1425" height="811" alt="{66EA4608-FD27-417F-A67B-7C68A5877D83}" src="https://github.com/user-attachments/assets/d65bc3ba-8236-4062-818d-4cd74cdcb3bd" /></p>
 
 ## 5. Mã hóa Playfair (Playfair Cipher)
 
@@ -314,7 +314,7 @@ Mã hoá: tạo bảng 5x5 từ khóa (I/J chung). Chia plaintext thành digraph
 Giải mã: quy tắc ngược lại.
 
 Không gian khóa: khoảng 25!/(...) rất lớn (phân bố hoán vị của 25 chữ cái), nhưng không gian thực tế nhỏ hơn do cấu trúc bảng.
-Cách phá: brute-force không khả thi; sử dụng hill-climbing/heuristic, scoring ngôn ngữ, hoặc tấn công dựa trên phân tích digraph.
+Cách phá: brute-force không khả thi; sử dụng hill-climbing/heuristic, scoring ngôn ngữ, hoặc tấn công dựa trên phân tích digraph.</p>
 
 ## Dùng một ma trận 5x5 chứa các chữ cái để mã hóa cặp ký tự (digraph).
 
@@ -334,7 +334,7 @@ Quy tắc:
 <img width="926" height="660" alt="{15AA732D-AA79-4642-900C-A684C24C21EB}" src="https://github.com/user-attachments/assets/5253b234-8907-46b2-a59d-6b986b31b8b5" />
 
 ## Giải mã 
-<img width="850" height="692" alt="{CBD7BF94-11E4-468B-BE41-B817426C7035}" src="https://github.com/user-attachments/assets/0fcb40f6-9be7-4d7e-aec5-f0fe7a4322d7" />
+<img width="850" height="692" alt="{CBD7BF94-11E4-468B-BE41-B817426C7035}" src="https://github.com/user-attachments/assets/0fcb40f6-9be7-4d7e-aec5-f0fe7a4322d7" /></p>
 
 ### Đã mã hóa và giải mã bằng C++
 #include <bits/stdc++.h>
@@ -463,6 +463,6 @@ int main() {
 
     return 0;
 }
-<img width="916" height="483" alt="{E7098335-D681-4AC2-908C-CE222709BDE7}" src="https://github.com/user-attachments/assets/b4b820c1-33fd-4d9a-b3cc-aa9b152c43a1" />
+<img width="916" height="483" alt="{E7098335-D681-4AC2-908C-CE222709BDE7}" src="https://github.com/user-attachments/assets/b4b820c1-33fd-4d9a-b3cc-aa9b152c43a1" /></p>
 
 
