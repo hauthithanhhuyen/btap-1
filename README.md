@@ -11,7 +11,7 @@ Tên gọi
 Thuật toán mã hoá, thuật toán giải mã
 Không gian khóa
 Cách phá mã (mà không cần khoá)
-Cài đặt thuật toán mã hoá và giải mã bằng code C++ và bằng html+css+javascript
+Cài đặt thuật toán mã hoá và giải mã bằng code C++ và bằng html+css+javascript</p>
 
 ### Encrypt (mã hoá): chuyển dữ liệu rõ (plaintext) thành dữ liệu đã được mã (ciphertext) bằng một thuật toán và (thường) một khóa, để che giấu nội dung.
 ### Decrypt (giải mã): đảo lại quá trình mã hoá, dùng thuật toán và khóa thích hợp để lấy lại plaintext từ ciphertext.
@@ -28,7 +28,7 @@ Cài đặt thuật toán mã hoá và giải mã bằng code C++ và bằng htm
  ### Sử dụng thuật toán
  <img width="1167" height="707" alt="{16D1F83C-4904-4745-AE32-D8817067C35B}" src="https://github.com/user-attachments/assets/e6479f1e-9937-4908-a712-d835c6de8eac" />
 ### Đã giải mã 
-<img width="802" height="790" alt="{5E55F458-4F97-40D2-9D7A-CCF37363AC01}" src="https://github.com/user-attachments/assets/e3a510b2-aecc-481a-a728-cb7c07b52067" />
+<img width="802" height="790" alt="{5E55F458-4F97-40D2-9D7A-CCF37363AC01}" src="https://github.com/user-attachments/assets/e3a510b2-aecc-481a-a728-cb7c07b52067" /></p>
 ## Đã mã hóa và giải mã qua C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -105,7 +105,7 @@ int main() {
 
 ## Không gian khóa: 25 (k=1..25)
 
-## Cách phá: brute-force thử 25 shift; phân tích tần suất để chọn dịch phù hợp.
+## Cách phá: brute-force thử 25 shift; phân tích tần suất để chọn dịch phù hợp.</p>
 
 Trong đó:
 
