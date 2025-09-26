@@ -33,14 +33,12 @@ Cài đặt thuật toán mã hoá và giải mã bằng code C++ và bằng htm
 #include <bits/stdc++.h>
 using namespace std;
 
-// Tìm nghịch đảo modulo
 int modInverse(int a, int m) {
     for (int x = 1; x < m; x++) 
         if ((a * x) % m == 1) return x;
     return -1;
 }
 
-// Mã hóa Affine
 string maHoaAffine(string text, int a, int b) {
     string res = "";
     for (char c : text) {
@@ -51,8 +49,6 @@ string maHoaAffine(string text, int a, int b) {
     }
     return res;
 }
-
-// Giải mã Affine
 string giaiMaAffine(string text, int a, int b) {
     string res = "";
     int a_inv = modInverse(a, 26);
@@ -64,7 +60,7 @@ string giaiMaAffine(string text, int a, int b) {
         } else res += c;
     }
     return res;
-}
+}</p>
 
 int main() {
     string plain, cipher;
@@ -115,7 +111,7 @@ Trong đó:
 
 - k: khóa dịch (shift key)
 
- HELLO với k=3 → KHOOR
+ HELLO với k=3 → KHOOR</p>
 
 # Kết quả
 ## Sử dụng thuật toán
@@ -150,7 +146,7 @@ string caesarDecrypt(const string &text, int key) {
         } else res += c;
     }
     return res;
-}
+}</p>
 
 int main() {
     string plain, cipher;
@@ -177,12 +173,12 @@ Tên: Columnar transposition (Hoán vị cột)
 Mã hoá: viết plaintext theo hàng vào ma trận có số cột = len(key); sắp xếp cột theo thứ tự khóa và đọc theo cột
 Giải mã: dựa vào chiều dài và thứ tự cột để dựng lại ma trận
 Không gian khóa: số hoán vị của số cột: n! (n = chiều dài khóa)
-Cách phá: thử các độ dài khóa khả dĩ rồi brute-force hoán vị nhỏ; sử dụng scoring/ngôn ngữ để chọn kết quả.
+Cách phá: thử các độ dài khóa khả dĩ rồi brute-force hoán vị nhỏ; sử dụng scoring/ngôn ngữ để chọn kết quả.</p>
 # Kết Quả
 #### Sử dụng mã hóa
 <img width="863" height="760" alt="{9EE7D392-8430-4684-B1CE-A24577F7AD3C}" src="https://github.com/user-attachments/assets/7b1332e7-80da-4119-9927-07368ad75584" />
 #### Giải mã 
-<img width="891" height="710" alt="{EDD29AA9-E5CB-4C9C-ACB3-BE5942BE2D9B}" src="https://github.com/user-attachments/assets/0c8292c1-69ea-4116-9f51-c79e004d1968" />
+<img width="891" height="710" alt="{EDD29AA9-E5CB-4C9C-ACB3-BE5942BE2D9B}" src="https://github.com/user-attachments/assets/0c8292c1-69ea-4116-9f51-c79e004d1968" /></p>
 #### Đã mã hóa và giải mã qua C++
 #include <bits/stdc++.h>
 using namespace std;
@@ -200,7 +196,7 @@ string encryptPermutation(const string &text, const vector<int> &key) {
         res += encBlock;
     }
     return res;
-}
+}</p>
 string decryptPermutation(const string &text, const vector<int> &key) {
     string res = "";
     int n = key.size();
@@ -215,7 +211,7 @@ string decryptPermutation(const string &text, const vector<int> &key) {
         res += decBlock;
     }
     return res;
-}
+}</p>
 int main() {
     string plain, cipher;
     int n;
@@ -235,7 +231,7 @@ int main() {
     cout << "Chuoi giai ma: " << decryptPermutation(cipher, key) << endl;
 
     return 0;
-}
+}</p>
 <img width="1465" height="707" alt="{FC5CFCDF-00BB-480D-A532-139B3A28F452}" src="https://github.com/user-attachments/assets/a09055f8-5f4b-4510-8e4f-b20bb10ca79a" /></p>
 
 # 4.Mã hóa Vigenère (Vigenère Cipher)Khóa lặp theo chiều dài plaintext
@@ -253,7 +249,7 @@ Cách phá: Kasiski + Friedman để tìm m, rồi tách từng Caesar (frequenc
 
 Trong đó:
 
-- K[i]: ký tự của khóa (lặp lại nếu cần)
+- K[i]: ký tự của khóa (lặp lại nếu cần)</p>
 
 # Kết Quả
 ## Mã Hóa
@@ -277,7 +273,7 @@ string vigenereEncrypt(const string &text, const string &key) {
         } else res += c;
     }
     return res;
-}
+}</p>
 // Giải mã Vigenere
 string vigenereDecrypt(const string &text, const string &key) {
     string res = "";
@@ -291,7 +287,7 @@ string vigenereDecrypt(const string &text, const string &key) {
         } else res += c;
     }
     return res;
-}
+}</p>
 int main() {
     string plain, cipher, key;
     cout << "=== Ma hoa Vigenere ===\n";
@@ -311,7 +307,7 @@ int main() {
 ## 5. Mã hóa Playfair (Playfair Cipher)
 
 Mã hoá: tạo bảng 5x5 từ khóa (I/J chung). Chia plaintext thành digraph (chèn X nếu cần). Quy tắc: cùng hàng/ cùng cột/ hình chữ nhật.
-Giải mã: quy tắc ngược lại.
+Giải mã: quy tắc ngược lại.</p>
 
 Không gian khóa: khoảng 25!/(...) rất lớn (phân bố hoán vị của 25 chữ cái), nhưng không gian thực tế nhỏ hơn do cấu trúc bảng.
 Cách phá: brute-force không khả thi; sử dụng hill-climbing/heuristic, scoring ngôn ngữ, hoặc tấn công dựa trên phân tích digraph.</p>
@@ -326,7 +322,7 @@ Quy tắc:
 
 3. Nếu cùng cột → thay bằng ký tự bên dưới.
 
-4. Nếu khác hàng khác cột → thay bằng ký tự cùng hàng nhưng cột của ký tự kia.
+4. Nếu khác hàng khác cột → thay bằng ký tự cùng hàng nhưng cột của ký tự kia.</p>
 
 # Kết Quả
 
@@ -377,7 +373,7 @@ void generateMatrix(const string &key) {
             k++;
         }
     }
-}
+}</p>
 
 // In ma trận Playfair (debug)
 void printMatrix() {
@@ -399,7 +395,7 @@ string prepareText(string text) {
         }
     }
     return s;
-}
+}</p>
 
 // Mã hóa cặp ký tự
 string encryptPair(char a, char b) {
@@ -409,7 +405,7 @@ string encryptPair(char a, char b) {
     else if(c1==c2) return string(1,matrix[(r1+1)%5][c1]) + matrix[(r2+1)%5][c2];
     else return string(1,matrix[r1][c2]) + matrix[r2][c1];
 }
-
+</p>
 // Giải mã cặp ký tự
 string decryptPair(char a, char b) {
     int r1=pos[a].first,c1=pos[a].second;
